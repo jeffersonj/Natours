@@ -1,0 +1,92 @@
+.btn{
+    &:link,
+    &:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        /* todo o tipo de transicao levara 2s */
+        transition: all .2s;
+        position: relative;
+        font-size: $default-font-size;
+    }
+
+    &:hover{
+        /* faz o transform no eixo Y em .3rem */
+        transform: translateY(-.3rem);
+        /* sombra de 0.0rem no eixo X, 1rem no eixo Y, 2rem de borrao aplicando uma cor RGB com opacidade para diminuir o borrao da sombra */
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+        &::after{
+            /* sera aumenta em esca de 1.4 no eixo X e 1.6 no eixo Y com opacidade 0 apos a transicao*/
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active{
+        transform: translateY(-.1rem);
+        /* sombra de 0.0rem no eixo X, .5rem no eixo Y, .5rem de borrao aplicando uma cor RGB com opacidade para diminuir o borrao da sombra */
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    
+    }
+
+    &--white{
+        background-color: $color-white;
+        color: $color-gray-dark;
+
+        &::after{
+            background-color: $color-white;
+        }
+    }
+
+    &::after{
+        content: '';
+        /* em bloco alinhado */
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* z-index define a posicao do elemento que ha sobreposicao */
+        /* z-index: -1 deixa o elemento atras ao qual ele esta se sobrepondo */
+        z-index: -1;
+        /* toda trasicao neste pseudo-elemento levara 4s */
+        transition: all .4s;
+    }
+    
+    &--animated{
+        /* animacao no botao com durcao de .5s do tipo ease-out e delay de .75s */
+        animation: moveInBottom .5s ease-out .75s;
+        /* configura a animacao antes de carregar a pagina - evita quebra da animacao */
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text{
+    &:link,
+    &:visited{
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}

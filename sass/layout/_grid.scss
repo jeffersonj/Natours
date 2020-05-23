@@ -1,0 +1,64 @@
+//CSS GRID SYSTEM
+
+.row{
+    max-width: $grid-width;
+    margin: 0 auto;
+
+    //operador :not(:last-child) <=> aplica o estilo informado para todos os itens, exceto o ultimo
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    //seletor multiplo de elementos para aplicacao de estilo
+    [class^="col-"]{
+        float: left;
+
+        //nao aplicara o estilo somente para o ultimo item
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    //calculo para 1 de 2 colunas
+    .col-1-of-2{
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
+
+    //calculo para 1 de 3 colunas
+    .col-1-of-3{
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    }
+
+    //calculo para 2 de 3 colunas
+    .col-2-of-3{
+        width: calc((2 * (100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+    }
+
+    //calculo para 1 de 4 colunas
+    .col-1-of-4{
+        width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+    }
+
+    //calculo para 2 de 4 colunas
+    .col-2-of-4{
+        width: calc((2 * (100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+    }
+
+    //calculo para 3 de 4 colunas
+    .col-3-of-4{
+        //largura: 3x o valor de 1 coluna (100% - 3x o valor das lacunas / 4) + 2x o valor de uma lacuna
+        width: calc((3 * (100% - 3 * #{$gutter-horizontal}) / 4) + (2 * #{$gutter-horizontal}));
+    }
+
+    //calculo para 1 de 5 colunas
+    .col-1-of-6{
+        width: calc((100% - 5 * #{$gutter-horizontal}) / 6);
+    }
+
+    //calculo para 5 de 6 colunas
+    .col-5-of-6{
+        width: calc((5 * (100% - 5 * #{$gutter-horizontal}) / 6) + (4 * #{$gutter-horizontal}));
+    }
+}

@@ -1,0 +1,21 @@
+//contem codigos parciais que sao as bases do projeto
+
+/* redefinir as caracteristicas padroes do browser e que serao usados no body*/
+*,
+/* redefinicao para pseudo-elementos */
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    //define que 1rem = 10px ou 62.5%px da fonte padrao
+    font-size: 62.5%;
+}
+
+body{
+    //border-box - toda a caixa. Caso sejam adicionadas border ou paddimng, os valores serao subtraidos do border-box e nao mais adicionados
+    box-sizing: border-box;
+}

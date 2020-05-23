@@ -1,0 +1,59 @@
+//contem os codigos relacionados aos animations do projetoque e que serao importadas no arquivo principal
+
+/* criar uma animacao esquerda -> direita */
+@keyframes moveInLeft{
+    /* o que acontecera em 0% */
+    0%{
+        opacity: 0;
+        /* de onde o conteudo vira (-10rem) em X */
+        transform: translateX(-10rem);
+    }
+    /* o que acontecera em 80% */
+    80%{
+        /* de onde o conteudo vira (2rem) em X */
+        transform: translateX(2rem);
+    }
+    /* o que acontecera em 100% */
+    100%{
+        opacity: 1;
+        /* termina o transform */
+        transform: translate(0);
+    }
+}
+
+/* criar uma animacao direita -> esquerda */
+@keyframes moveInRight{
+    /* o que acontecera em 0% */
+    0%{
+        opacity: 0;
+        /* de onde o conteudo vira (-10rem) em X */
+        transform: translateX(10rem);
+    }
+    /* o que acontecera em 80% */
+    80%{
+        /* de onde o conteudo vira (2rem) em X */
+        transform: translateX(-2rem);
+    }
+    /* o que acontecera em 100% */
+    100%{
+        opacity: 1;
+        /* termina o transform */
+        transform: translate(0);
+    }
+}
+
+/* criar uma animacao direita -> esquerda */
+@keyframes moveInBottom{
+    /* o que acontecera em 0% */
+    0%{
+        opacity: 0;
+        /* de onde o conteudo vira (-10rem) em X */
+        transform: translateY(3rem);
+    }
+    /* o que acontecera em 100% */
+    100%{
+        opacity: 1;
+        /* termina o transform */
+        transform: translate(0);
+    }
+}

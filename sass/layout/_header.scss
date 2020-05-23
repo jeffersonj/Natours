@@ -1,0 +1,40 @@
+.header{
+    /* ocupar 95% do height do viewport (tela) */
+    height: 95vh;
+    /* configurar o bg com gradiente e imagem */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary, 0.8),
+        rgba($color-primary-light, 0.8)),
+    url(../img/hero.jpg);
+    /* cobrir todo o backgroud da class */
+    background-size: cover;
+    background-position: top;
+    /* seta cada posicao de x e y para formar o poligono */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+
+
+    &__logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    
+    &__logo{
+        height: 3.5rem;
+    }
+    
+    &__text-box{
+        position: absolute;
+        /* vh: view height */
+        top: 40vh;
+        /* vw: view width */
+        left: 50vw;
+    
+        /* transformar o elemento iniciar o posicionamento a partir de 50% / 50% */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+}

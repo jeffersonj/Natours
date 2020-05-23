@@ -1,0 +1,47 @@
+.composition{
+    position: relative;
+    
+    &__photo{
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: 2px;
+        transition: all .2s;
+        //usado para sobrepor um elemento em relacao a outro (z-index maior sobrepoe o menor)
+        z-index: 1;
+        //criar um espaco entre o elemento e sua borda criada com o offset
+        outline-offset: 2rem;
+
+        //posicionamento a 0,0 em relacao ao pai
+        position: absolute;
+    
+        &--p1{
+            left: 0;
+            top: -2rem;
+        }
+    
+        &--p2{
+            right: 0;
+            top: 2rem;
+        }
+    
+        &--p3{
+            left: 20%;
+            top: 10rem;
+        }
+
+        &:hover{
+            transform: scale(1.05) translateY(-1rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 2;
+            //criar um contorno no elemento com o estado de foco
+            outline: 1.5rem solid $color-primary;
+        }
+    
+    }
+
+    //diminuir o scale da imagens que nao estao em foco
+    &:hover &__photo:not(:hover){
+        transform: scale(.9);
+    }
+
+}
