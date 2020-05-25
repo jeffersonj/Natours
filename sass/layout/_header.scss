@@ -4,13 +4,14 @@
     /* configurar o bg com gradiente e imagem */
     background-image: linear-gradient(
         to right bottom,
-        rgba($color-primary, 0.8),
-        rgba($color-primary-light, 0.8)),
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
     url(../img/hero.jpg);
     /* cobrir todo o backgroud da class */
     background-size: cover;
     background-position: top;
     /* seta cada posicao de x e y para formar o poligono */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative;
 
@@ -36,5 +37,5 @@
         transform: translate(-50%, -50%);
         text-align: center;
     }
-
+    
 }
