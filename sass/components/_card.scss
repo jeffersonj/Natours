@@ -13,7 +13,10 @@
         left: 0;
         width: 100%;
         
+<<<<<<< HEAD
         -webkit-backface-visibility: hidden;
+=======
+>>>>>>> af973e54b6cf879eb6fce4370801532ca0c167e8
         backface-visibility: hidden; //esconder o fundo
         border-radius: 3px;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
@@ -59,7 +62,11 @@
         clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
 
         //correcao do radius para quebra do overflow
+<<<<<<< HEAD
         border-top-right-radius: 3px;
+=======
+        border-top-left-radius: 3px;
+>>>>>>> af973e54b6cf879eb6fce4370801532ca0c167e8
         border-top-right-radius: 3px;
         
         &--1{
@@ -116,7 +123,11 @@
     }
 
     &__details{
+<<<<<<< HEAD
         padding: 3rem;
+=======
+        padding: 1rem;
+>>>>>>> af973e54b6cf879eb6fce4370801532ca0c167e8
 
         ul{
             //informa somente as margens superio e inferior, deixa o browser calcular as margens laterais (e fica centralizado)
@@ -130,7 +141,11 @@
                 font-size: 1.5rem;
 
                 &:not(:last-child){
+<<<<<<< HEAD
                     border-bottom: 1px solid $color-grey-light-2;
+=======
+                    border-bottom: 1px solid $color-gray-2;
+>>>>>>> af973e54b6cf879eb6fce4370801532ca0c167e8
                 }
     
             }
