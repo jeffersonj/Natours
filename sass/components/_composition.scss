@@ -30,7 +30,7 @@
         }
 
         &:hover{
-            transform: scale(1.05) translateY(-1rem);
+            transform: scale(1.05) translateY(-.5rem);
             box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
             z-index: 2;
             //criar um contorno no elemento com o estado de foco
@@ -41,7 +41,7 @@
 
     //diminuir o scale da imagens que nao estao em foco
     &:hover &__photo:not(:hover){
-        transform: scale(.9);
+        transform: scale(.95);
     }
 
 }

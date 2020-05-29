@@ -1,0 +1,155 @@
+.navigation{
+
+    &__checkbox{
+        display: none;
+    }
+
+    &__button{
+        background-color: $color-white;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        border-radius: 50%;
+        z-index: 4;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1); //1.sobra horizontal / sobra vertical / nivel do blur (borrao)
+        cursor: pointer;
+
+        //centralizar icon
+        text-align: center;
+
+    }
+
+    &__background{
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
+        z-index: 2;
+
+        transition: transform .8s  cubic-bezier(0.86, 0, 0.07 ,1);
+        //transform: scale(80);
+    }
+
+    &__nav{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3; //ficara entre o button e o background
+
+        opacity: 0;
+        width: 0;
+
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.5); //transicao do nav (vai e volta)
+    }
+
+    &__list{
+        @include centralization;
+        list-style: none;
+        text-align: center;
+    }
+
+    &__item{
+        margin: 1rem;
+    }
+
+    &__link{
+        &:link,
+        &:visited{
+            width: 100%;
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 300;
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            //background de cores solidas
+            background-image: linear-gradient(
+                120deg, transparent 0%,
+                transparent 50%,
+                $color-white 50%);
+            padding: 1rem 2rem;
+
+            background-size: 220%;
+            transition: all .4s;
+        }
+
+        &:hover,
+        &:active{
+            background-position: 100%; //porcentagem de cobertura do bg
+            color: $color-primary; //define a cor do texto no :hover
+            transform: translateX(1rem);
+        }
+    }
+
+    //FUNCTIONALITY
+    &__checkbox:checked ~ &__background{ //quando checked
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav{ //quando checked
+        opacity: 1;
+        width: 100%;
+    }
+
+    //MENU-ICON
+    &__icon{
+        position: relative;
+        margin-top: 3.4rem; //centralizacao no button
+
+        //criando as 3 listras 
+        &,
+        &::before,
+        &::after{
+            width: 3rem;
+            height: 2px;
+            border-bottom: 0.2rem solid $color-gray-dark-3;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before{
+            top: -.8rem;
+        }
+
+        &::after{
+            top: .8rem;
+        }
+    }
+
+    &__button:hover &__icon::before{
+        transform: translateY(-.2rem);
+    }
+
+    &__button:hover &__icon::after{
+        transform: translateY(.2rem);
+    }
+
+    //selecionar o seletor irmão
+    &__checkbox:checked ~ &__button &__icon{
+        border-bottom: transparent;
+    }
+    
+    &__checkbox:checked ~ &__button &__icon::after{
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked ~ &__button &__icon::before{
+        top: 0;
+        transform: rotate(-135deg);
+    }
+}

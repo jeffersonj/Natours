@@ -1,0 +1,65 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg); //distorce o elemento story a -12 graus
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        // o texto contorna a imagem de 50% do diametro do circulo ate 50% horizontal e 50% veritcal para fora do circulo
+        //exige largura e flutuacao
+        -webkit-shape-outside: circle(50% at 50% 50%); 
+        shape-outside: circle(50% at 50% 50%);
+
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%); //criar um circulo perfeito
+        transform: translateX(-3rem) skewX(12deg); //recuar a imagem em 3graus e reclinar o shape a 12 graus
+
+        position: relative;
+        overflow: hidden; //remove o fundo para nao bugar a imagem
+
+    }
+
+    &__img{
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        backface-visibility: hidden; //esconder o fundo para nao bugar a animacao
+        transition: all .5s;
+    }
+
+    &__text{
+        transform: skewX(12deg); //distorce o elemento story a -12 graus
+    }
+
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%); //texto abaixo e no centro
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden; //esconder o fundo para nao bugar a animacao
+
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%, -50%); //texto voltand ao centro da imagem
+    }
+
+    &:hover &__img{
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}
