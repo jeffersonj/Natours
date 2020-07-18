@@ -19,6 +19,15 @@
         //centralizar icon
         text-align: center;
 
+        @include respond(tab-port){ //corrigindo o navigation
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond(phone){
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &__background{
@@ -33,6 +42,16 @@
 
         transition: transform .8s  cubic-bezier(0.86, 0, 0.07 ,1);
         //transform: scale(80);
+
+        @include respond(tab-port){ //corrigindo o navigation
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+
+        @include respond(phone){
+            top: 3.5rem;
+            right: 3.5rem;
+        }
     }
 
     &__nav{

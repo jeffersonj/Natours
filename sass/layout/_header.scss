@@ -15,6 +15,12 @@
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative;
 
+    @include respond(phone){
+        /* seta cada posicao de x e y para formar o poligono */
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
 
     &__logo-box{
         position: absolute;
@@ -37,8 +43,4 @@
         transform: translate(-50%, -50%);
         text-align: center;
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> af973e54b6cf879eb6fce4370801532ca0c167e8
 }
